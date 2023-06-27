@@ -3,11 +3,11 @@ pipeline {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
     }
     tools {
-        jdk 'JDK11'
+        jdk 'java11'
         maven 'Maven3'
     }
     environment {
-        JAVA_HOME = "/usr/lib/jvm/java-11-openjdk-amd64"
+        JAVA_HOME = "/usr/bin/java"
     }
     stages {
         stage("Cleanup Workspace") {
