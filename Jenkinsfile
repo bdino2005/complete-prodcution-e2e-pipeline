@@ -2,10 +2,7 @@ pipeline {
     agent {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
     }
-    tools {
-        jdk 'java11'
-        maven 'Maven3'
-    }
+   
     environment {
         JAVA_HOME = "/usr/bin/java"
     }
