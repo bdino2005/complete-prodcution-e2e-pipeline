@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        label "jenkins-agent"
+         docker { image 'node:16-alpine' }
     }
     tools {
         jdk 'Java17'
