@@ -6,12 +6,8 @@ pipeline{
         jdk 'JDK11'
         maven 'Maven3'
     }
-    environment {
-       JAVA_HOME = '/path/to/jdk' 
-    }
-    
-    
-    
+   
+
     stages{
         stage("Cleanup Workspace"){
             steps {
