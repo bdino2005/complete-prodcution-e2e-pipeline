@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage("Print Working Directory") {
+            steps {
+                script {
+                    def currentDir = pwd()
+                    echo "Current working directory: ${currentDir}"
+                }
+            }
+        }
+    }
+}
