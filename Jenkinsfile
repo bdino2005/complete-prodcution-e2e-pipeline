@@ -1,10 +1,6 @@
 pipeline {
     agent {
-        docker { image 'maven:3.8.1-adoptopenjdk-11' }
-    }
-   
-    environment {
-        JAVA_HOME = "/usr/bin/java"
+        docker { image 'maven:3.8.1-openjdk-11' }
     }
     stages {
         stage("Cleanup Workspace") {
@@ -19,17 +15,14 @@ pipeline {
         }
         stage("Build Application") {
             steps {
-                withEnv(["JAVA_HOME=${env.JAVA_HOME}"]) {
-                    sh "mvn clean package"
-                }
+                sh "mvn clean package"
             }
         }
         stage("Test Application") {
             steps {
-                withEnv(["JAVA_HOME=${env.JAVA_HOME}"]) {
-                    sh "mvn test"
-                }
+                sh "mvn test"
             }
         }
     }
 }
+
