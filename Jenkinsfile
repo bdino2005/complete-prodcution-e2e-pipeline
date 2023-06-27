@@ -32,7 +32,7 @@ pipeline{
         }
         stage("test Application"){
             steps {
-               sh "mvn"
+               sh "mvn test"
             }
 
         }
