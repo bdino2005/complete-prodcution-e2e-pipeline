@@ -6,6 +6,8 @@ pipeline{
         jdk 'Java17'
         maven 'Maven3'
     }
+    /*
+
     environment {
         APP_NAME = "complete-prodcution-e2e-pipeline"
         RELEASE = "1.0.0"
@@ -16,6 +18,8 @@ pipeline{
         JENKINS_API_TOKEN = credentials("JENKINS_API_TOKEN")
 
     }
+
+    */
     stages{
         stage("Cleanup Workspace"){
             steps {
@@ -124,4 +128,4 @@ pipeline{
           }      
     }
 }
-*/
+
