@@ -7,7 +7,7 @@ pipeline{
         maven 'Maven3'
     }
     environment {
-       JAVA_HOME = '/usr/bin/java' 
+       JAVA_HOME = '/usr/bin/jdk' 
     }
     
     
