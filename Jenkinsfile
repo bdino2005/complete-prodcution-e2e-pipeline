@@ -6,7 +6,12 @@ pipeline{
         jdk 'JDK11'
         maven 'Maven3'
     }
+    environment {
+        JAVA_HOME = "/usr/lib/jvm/java-11-openjdk-amd64"
+    }
+
    
+
 
     stages{
         stage("Cleanup Workspace"){
@@ -24,6 +29,7 @@ pipeline{
         }
         stage("build Application"){
             steps {
+
                sh "mvn clean package"
             }
 
