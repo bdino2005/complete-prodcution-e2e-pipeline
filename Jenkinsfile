@@ -10,19 +10,27 @@ pipeline {
         }
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/bdino2005/complete-prodcution-e2e-pipeline'
+                dir('/var/lib/jenkins/workspace/project2-maven') {
+ 
+                    git branch: 'main', credentialsId: 'github', url: 'https://github.com/bdino2005/complete-prodcution-e2e-pipeline'
+                }
             }
         }
         stage("Build Application") {
             steps {
-                sh "mvn clean package"
+                dir('/var/lib/jenkins/workspace/project2-maven') {
+ 
+                    sh "mvn clean package"
+                }
             }
         }
         stage("Test Application") {
             steps {
-                sh "mvn test"
+                dir('/var/lib/jenkins/workspace/project2-maven') {
+ 
+                    sh "mvn test"
+                }
             }
         }
     }
 }
-
