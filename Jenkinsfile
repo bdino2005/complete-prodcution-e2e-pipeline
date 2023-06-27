@@ -1,6 +1,6 @@
 pipeline{
     agent{
-         docker { image 'node:16-alpine' }
+         docker { image 'maven:3.9.3-adoptopenjdk-11' }
     }
     tools {
         jdk 'JDK11'
