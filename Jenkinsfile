@@ -3,7 +3,7 @@ pipeline{
          docker { image 'node:16-alpine' }
     }
     tools {
-        jdk 'Java17'
+        jdk 'Java9'
         maven 'Maven3'
     }
     
