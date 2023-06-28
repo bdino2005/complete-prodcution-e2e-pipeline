@@ -1,6 +1,9 @@
 pipeline {
     agent {
         docker { image 'maven:3.8.1-openjdk-11' }
+         tools {
+    maven 'Maven 3.9.3' // Make sure the tool name matches the configured name
+  }
     }
     stages {
         stage("Cleanup Workspace") {
