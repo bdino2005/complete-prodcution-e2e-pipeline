@@ -1,10 +1,13 @@
 pipeline {
-    agent any
-         tools {
-    maven 'Maven 3.9.3' 
-     jdk 'Java11'         
-  }
+    agent {
+        docker { image 'maven:3.8.1-openjdk-11' }
+
     }
+     tools {
+        jdk 'Java11'
+        maven 'Maven3'
+    }
+    
     stages {
         stage("Cleanup Workspace") {
             steps {
@@ -37,4 +40,3 @@ pipeline {
         }
     }
 }
-
