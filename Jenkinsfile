@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'maven:3.8.1-openjdk-11' }
+        label  "agent1"
     }
     stages {
         stage("Cleanup Workspace") {
